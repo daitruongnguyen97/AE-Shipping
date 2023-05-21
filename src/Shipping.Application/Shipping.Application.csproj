@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+      <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+	    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+      <PackageReference Include="EPPlus" Version="6.0.8" />
+
+    </ItemGroup>
+	
+    <ItemGroup>
+      <ProjectReference Include="..\Shipping.Infrastructure\Shipping.Infrastructure.csproj" />
+    </ItemGroup>
+	
+    <ItemGroup>
+      <Folder Include="Features\Port\Commands\" />
+    </ItemGroup>
+
+</Project>

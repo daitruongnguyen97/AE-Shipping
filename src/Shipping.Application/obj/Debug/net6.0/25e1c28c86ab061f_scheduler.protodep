@@ -1,0 +1,2 @@
+obj\Debug\net6.0\GRPC/Scheduler.cs \
+obj\Debug\net6.0\GRPC/SchedulerGrpc.cs: GRPC/scheduler.proto

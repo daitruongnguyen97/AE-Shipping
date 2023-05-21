@@ -1,0 +1,2 @@
+obj\Release\net6.0\GRPC/Schedule.cs \
+obj\Release\net6.0\GRPC/ScheduleGrpc.cs: GRPC/schedule.proto

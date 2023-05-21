@@ -1,0 +1,17 @@
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\bin\Debug\net6.0\Shipping.Application.deps.json
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\bin\Debug\net6.0\Shipping.Application.dll
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\bin\Debug\net6.0\Shipping.Application.pdb
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\bin\Debug\net6.0\Shipping.Domain.dll
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\bin\Debug\net6.0\Shipping.Infrastructure.dll
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\bin\Debug\net6.0\Shipping.Infrastructure.pdb
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\bin\Debug\net6.0\Shipping.Domain.pdb
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\obj\Debug\net6.0\Shipping.Application.csproj.AssemblyReference.cache
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\obj\Debug\net6.0\Shipping.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\obj\Debug\net6.0\Shipping.Application.AssemblyInfoInputs.cache
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\obj\Debug\net6.0\Shipping.Application.AssemblyInfo.cs
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\obj\Debug\net6.0\Shipping.Application.csproj.CoreCompileInputs.cache
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\obj\Debug\net6.0\Shipping.Application.csproj.CopyComplete
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\obj\Debug\net6.0\Shipping.Application.dll
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\obj\Debug\net6.0\refint\Shipping.Application.dll
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\obj\Debug\net6.0\Shipping.Application.pdb
+D:\Project\CMCTest\ShippingSystem\src\Shipping.Application\obj\Debug\net6.0\ref\Shipping.Application.dll

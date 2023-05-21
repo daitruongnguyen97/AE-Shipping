@@ -1,0 +1,15 @@
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\bin\Debug\net6.0\ZM.Domain.deps.json
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\bin\Debug\net6.0\ZM.Domain.dll
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\bin\Debug\net6.0\ZM.Domain.pdb
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\bin\Debug\net6.0\ZM.Common.Dapper.dll
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\bin\Debug\net6.0\ZM.Common.Dapper.pdb
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\obj\Debug\net6.0\ZM.Domain.csproj.AssemblyReference.cache
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\obj\Debug\net6.0\ZM.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\obj\Debug\net6.0\ZM.Domain.AssemblyInfoInputs.cache
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\obj\Debug\net6.0\ZM.Domain.AssemblyInfo.cs
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\obj\Debug\net6.0\ZM.Domain.csproj.CoreCompileInputs.cache
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\obj\Debug\net6.0\ZM.Domain.csproj.CopyComplete
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\obj\Debug\net6.0\ZM.Domain.dll
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\obj\Debug\net6.0\refint\ZM.Domain.dll
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\obj\Debug\net6.0\ZM.Domain.pdb
+D:\Project\zMiningV2\Hyenas_zv2\src\BuildingBlocks\ZM.Domain\obj\Debug\net6.0\ref\ZM.Domain.dll
