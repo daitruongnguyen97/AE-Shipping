@@ -11,8 +11,11 @@ The goal of this challenge is to build a solution comprised of REST APIs that fi
 - SQL Server
 - Swagger
 - NetTopologySuite
+- Docker
 
 ## First time setup
+
+### Run by Visual Studio
 1. Clone project from git
 2. Build the solution to restore the NuGet packages
 3. Update connection string in `Shipping.API\appsetting.json` file
@@ -29,6 +32,12 @@ The goal of this challenge is to build a solution comprised of REST APIs that fi
     + Point `Default Project` to `Shipping.Infrastructure`
     + Run `Update-Database` cmd
 5. After the `Swagger` page show up, you are ready to go with all the API
+
+### Run by Docker
+1. Open `PowerShell`
+2. cd to `AE-Shipping` folder that contain `Dockerfile` and `docker-compose.yml`
+3. Run this cmd: `docker-compose up -d`
+4. Access to `Swagger` page at `http://localhost:8081/swagger` and ready to go with all API
 
 ## API Endpoint
 
