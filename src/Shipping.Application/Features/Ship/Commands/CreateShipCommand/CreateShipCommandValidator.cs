@@ -16,10 +16,10 @@ namespace Shipping.Application.Features.Ship.Commands.CreateShipCommand
             RuleFor(x => x.Geolocation)
                 .NotEmpty().WithMessage("{{Geolocation}} can not empty")
                 .ChildRules(s => s.RuleFor(s => s.Latitude)
-                    .GreaterThanOrEqualTo(0).WithMessage("{{Latitude}} must greater than 0")
+                    .GreaterThanOrEqualTo(-90).WithMessage("{{Latitude}} must greater than -90")
                     .LessThanOrEqualTo(90).WithMessage("{{Latitude}} must less than 90"))
                 .ChildRules(s => s.RuleFor(s => s.Longitude)
-                    .GreaterThanOrEqualTo(0).WithMessage("{{Longitude}} must greater than 0")
+                    .GreaterThanOrEqualTo(-90).WithMessage("{{Longitude}} must greater than -90")
                     .LessThanOrEqualTo(90).WithMessage("{{Latitude}} must less than 90"));
 
             RuleFor(x => x.Velocity)

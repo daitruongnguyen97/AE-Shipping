@@ -19,8 +19,12 @@ namespace Shipping.Application.Features.Ship.Commands.UpdateShipCommand
             When(s => s.Geolocation != null, () =>
             {
                 RuleFor(x => x.Geolocation)
-                    .ChildRules(s => s.RuleFor(s => s.Latitude).GreaterThanOrEqualTo(0).WithMessage("{{Latitude}} must greater than 0"))
-                    .ChildRules(s => s.RuleFor(s => s.Longitude).GreaterThanOrEqualTo(0).WithMessage("{{Longitude}} must greater than 0"));
+                .ChildRules(s => s.RuleFor(s => s.Latitude)
+                    .GreaterThanOrEqualTo(-90).WithMessage("{{Latitude}} must greater than -90")
+                    .LessThanOrEqualTo(90).WithMessage("{{Latitude}} must less than 90"))
+                .ChildRules(s => s.RuleFor(s => s.Longitude)
+                    .GreaterThanOrEqualTo(-90).WithMessage("{{Longitude}} must greater than -90")
+                    .LessThanOrEqualTo(90).WithMessage("{{Latitude}} must less than 90"));
             });
 
             When(s => s.Velocity != null, () =>

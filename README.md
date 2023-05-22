@@ -58,3 +58,4 @@ The goal of this challenge is to build a solution comprised of REST APIs that fi
 - The velocity unit is `km/h`
 - Distance return between 2 `NetTopologySuite Point`s unit is `kilometer`
 - No authentication implemented
+- `NetTopologySuite Point` `Longtitude` and `Latitude` value only valid from `-90 to 90`
