@@ -19,11 +19,11 @@ namespace Shipping.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("ship/{id}", Name = "GetClosetPort")]
+        [HttpGet("closet/{shipId}", Name = "GetClosetPort")]
         [ProducesResponseType(typeof(ArrivalVm), (int)HttpStatusCode.Created)]
-        public async Task<IActionResult> GetCloset(string id)
+        public async Task<IActionResult> GetCloset(string shipId)
         {
-            var command = new GetClosetPortQuery(id);
+            var command = new GetClosetPortQuery(shipId);
             var result = await _mediator.Send(command);
             return Ok(result);
         }
