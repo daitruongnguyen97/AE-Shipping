@@ -21,7 +21,13 @@ The goal of this challenge is to build a solution comprised of REST APIs that fi
     "AppConnection": "Server=127.0.0.1, 1433;Database=Shipping-System;User Id=sa;Password=Password@123;"
   },
 ```
-4. The database migrator will auto run if the `Shipping-System` database is not existing or there's a missing migration. Seed data for `Port` and `Ship` will also auto generate in this migration
+4. Run Migration:
+- Option 1: 
+    The database migrator will auto run if the `Shipping-System` database is not existing or there's a missing migration. Seed data for `Port` and `Ship` will also auto generate in this migration
+- Option 2:
+    + Open `Package Manager Console` in `Visual Studio`
+    + Point `Default Project` to `Shipping.Infrastructure`
+    + Run `Update-Database` cmd
 5. After the `Swagger` page show up, you are ready to go with all the API
 
 ## API Endpoint
