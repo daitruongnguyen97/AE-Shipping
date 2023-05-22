@@ -66,7 +66,6 @@ namespace Shipping.Application.Features.Port.Queries.GetClosetPortQuery
             }
             arrivalTime = DateTime.UtcNow.AddHours(estimated);
             return true;
-
         }
     }
 }

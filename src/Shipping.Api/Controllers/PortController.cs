@@ -5,6 +5,7 @@ using Shipping.Application.Features.Port.Queries.GetClosetPortQuery;
 using Shipping.Application.Features.Port;
 using Shipping.Application.Features.Port.Queries.GetAllPortsQuery;
 using Shipping.Application.Features.Port.Queries.GetPortById;
+using NetTopologySuite.Geometries;
 
 namespace Shipping.API.Controllers
 {
