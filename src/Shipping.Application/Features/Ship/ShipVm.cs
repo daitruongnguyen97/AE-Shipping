@@ -10,6 +10,7 @@ namespace Shipping.Application.Features.Ship
 {
     public class ShipVm
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public Location Geolocation { get; set; }
         public long Velocity { get; set; }

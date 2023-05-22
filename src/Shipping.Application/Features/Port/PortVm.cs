@@ -10,6 +10,7 @@ namespace Shipping.Application.Features.Port
 {
     public class PortVm
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public Location Geolocation { get; set; }
     }
