@@ -21,7 +21,7 @@ namespace Shipping.Application.Features.Ship.Queries.GetAllShipsQuery
 
         public async Task<List<ShipVm>> Handle(GetAllShipsQuery request, CancellationToken cancellationToken)
         {
-            var query = await _shipRepository.List().ToListAsync(cancellationToken);
+            var query = _shipRepository.List().ToList();
             var result = _mapper.Map<List<ShipVm>>(query);
             return result;
         }

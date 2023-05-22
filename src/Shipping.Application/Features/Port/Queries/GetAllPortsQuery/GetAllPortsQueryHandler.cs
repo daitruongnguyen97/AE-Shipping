@@ -24,7 +24,7 @@ namespace Shipping.Application.Features.Port.Queries.GetAllPortsQuery
 
         public async Task<List<PortVm>> Handle(GetAllPortsQuery request, CancellationToken cancellationToken)
         {
-            var query = await _portRepository.List().ToListAsync(cancellationToken);
+            var query = _portRepository.List().ToList();
             var result = _mapper.Map<List<PortVm>>(query);
             return result;
         }

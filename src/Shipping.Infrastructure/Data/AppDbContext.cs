@@ -3,7 +3,6 @@ using Shipping.Domain.Model;
 using NetTopologySuite.Geometries;
 using System.Reflection;
 using Domain;
-using ZM.Domain;
 
 namespace Shipping.Infrastructure.Data;
 

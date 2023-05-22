@@ -2,7 +2,7 @@
 using System.Data;
 using System.Linq.Expressions;
 
-namespace ZM.Domain;
+namespace Domain;
 
 public interface ILinqRepository<T>
 {

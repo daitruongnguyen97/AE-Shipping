@@ -25,7 +25,7 @@ namespace Shipping.Application.Features.Port.Queries.GetPortById
         public async Task<PortVm> Handle(GetPortById request, CancellationToken cancellationToken)
         {
             var guid = new Guid(request.Id);
-            var query = await _portRepository.List(s => s.Id == guid).FirstOrDefaultAsync(cancellationToken);
+            var query = _portRepository.List(s => s.Id == guid).FirstOrDefault();
             if (query == null)
             {
                 throw new Exception("Port is not existing");

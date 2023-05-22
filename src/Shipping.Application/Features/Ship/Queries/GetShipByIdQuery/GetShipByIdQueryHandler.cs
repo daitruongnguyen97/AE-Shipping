@@ -22,7 +22,7 @@ namespace Shipping.Application.Features.Ship.Queries.GetShipByIdQuery
         public async Task<ShipVm> Handle(GetShipByIdQuery request, CancellationToken cancellationToken)
         {
             var guid = new Guid(request.Id);
-            var query = await _shipRepository.List(s => s.Id == guid).FirstOrDefaultAsync(cancellationToken);
+            var query = _shipRepository.List(s => s.Id == guid).FirstOrDefault();
             if (query == null)
             {
                 throw new Exception("Ship is not existing");
