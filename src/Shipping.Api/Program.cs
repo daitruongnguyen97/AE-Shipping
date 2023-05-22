@@ -58,13 +58,12 @@ app.UseEndpoints(endpoints =>
     endpoints.MapDefaultControllerRoute();
     endpoints.MapControllers();
 });
-if (!app.Environment.IsProduction())
-{
-    //Migrate app db
-    using var scope = app.Services.CreateScope();
-    var initialiser = scope.ServiceProvider.GetRequiredService<AppDbContextInitialiser>();
-    await initialiser.InitialiseAsync();
-}
+
+//Migrate app db
+using var scope = app.Services.CreateScope();
+var initialiser = scope.ServiceProvider.GetRequiredService<AppDbContextInitialiser>();
+await initialiser.InitialiseAsync();
+
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();

@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  web:
+    build:
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "8081:8081"
+    container_name: ae-shipping 
+    command: sh -c "sleep 15 && dotnet Shipping.API.dll"
+    networks:
+      - shipping_network
+
+  db:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    environment:
+      SA_PASSWORD: "Password@123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    networks:
+      - shipping_network
+    container_name: ae_db
+
+networks:
+  shipping_network:
+    driver: bridge

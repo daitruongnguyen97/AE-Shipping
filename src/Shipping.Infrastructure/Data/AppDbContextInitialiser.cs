@@ -29,7 +29,7 @@ public class AppDbContextInitialiser
         catch(Exception ex)
         {
             _logger.LogError(ex, "An error occurred while initialising the database.");
-            throw;
+            throw new Exception($"Fail to connect {_context.Database.GetConnectionString()}");
         }
     }
 }
