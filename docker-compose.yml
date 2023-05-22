@@ -6,11 +6,11 @@ services:
     depends_on:
       - db
     ports:
-      - "8081:8081"
+      - "8081:80"
     container_name: ae-shipping 
     command: sh -c "sleep 15 && dotnet Shipping.API.dll"
     networks:
-      - shipping_network
+      - shipping-network
 
   db:
     image: "mcr.microsoft.com/mssql/server:2019-latest"
@@ -20,9 +20,9 @@ services:
     ports:
       - "1433:1433"
     networks:
-      - shipping_network
+      - shipping-network
     container_name: ae_db
 
 networks:
-  shipping_network:
+  shipping-network:
     driver: bridge
