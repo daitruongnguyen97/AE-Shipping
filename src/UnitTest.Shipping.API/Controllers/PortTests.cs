@@ -1,19 +1,11 @@
 ﻿using MediatR;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Shipping.API.Controllers;
+using Shipping.Application.Features.Port.Queries.GetAllPortsQuery;
 using Shipping.Application.Features.Port.Queries.GetClosetPortQuery;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Shipping.API.Controllers.Tests
 {
-
-    [TestClass()]
-
+    [TestClass]
     public class PortControllerTests
     {
         private readonly IMediator _mediator;
@@ -25,10 +17,8 @@ namespace Shipping.API.Controllers.Tests
         [TestMethod()]
         public async Task GetClosetTest()
         {
-
             var handler = new GetClosetPortQuery("");
             var result = await _mediator.Send(handler);
-
             Assert.Fail();
         }
 
@@ -39,9 +29,21 @@ namespace Shipping.API.Controllers.Tests
         }
 
         [TestMethod()]
-        public void GetAllPortsTest()
+        public async Task GetAllPortsTest()
         {
-            Assert.Fail();
+            try
+            {
+                var handler = new GetAllPortsQuery();
+                var result = await _mediator.Send(handler);
+                if (result.Count != 6)
+                {
+                    Assert.Fail();
+                }
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail();
+            }
         }
     }
 }
