@@ -36,7 +36,7 @@ namespace Shipping.Application.Features.Port.Queries.GetClosetPortQuery
                 throw new Exception("Ship is not existing");
             }
 
-            var ports = await _portRepository.List().OrderBy(s => s.Geolocation.Distance(ship.Geolocation)).ToListAsync(cancellationToken);
+            var ports = _portRepository.List().OrderBy(s => s.Geolocation.Distance(ship.Geolocation)).ToList();
             
             foreach(var port in ports)
             {

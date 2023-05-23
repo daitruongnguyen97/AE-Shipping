@@ -24,6 +24,35 @@ namespace Test.Shipping.PortTest
         [SetUp]
         public void Setup()
         {
+            var shipGuid = new Guid("D7A50733-D4CE-4564-A4FD-4355D6479268");
+            var portGuid = new Guid("7B259406-2E49-413E-AF5D-EF16015C876A");
+            var mockShip = new List<Ship>()
+            {
+                new Ship
+                {
+                    CreatedDate = DateTime.UtcNow,
+                    Geolocation = new Point(68.2, 88) { SRID = 4326 },
+                    Name = "Ship 1",
+                    Id = shipGuid,
+                    Velocity = 30
+                }
+            };
+
+            var mockPort = new List<Port>()
+            {
+                new Port
+                {
+                    CreatedDate = DateTime.UtcNow,
+                    Geolocation = new Point(76.2, 75.2) { SRID = 4326 },
+                    Name = "Port 2",
+                    Id = portGuid
+                },
+            };
+            _mockShipRepo.Setup(s => s.List(null)).Returns(mockShip.AsQueryable());
+            _mockShipRepo.Setup(s => s.List(x => x.Id == shipGuid)).Returns(mockShip.AsQueryable());
+
+            _mockPortRepo.Setup(s => s.List(null)).Returns(mockPort.AsQueryable());
+            _mockPortRepo.Setup(s => s.List(x => x.Id == portGuid)).Returns(mockPort.AsQueryable());
         }
 
         [Test]
@@ -38,36 +67,23 @@ namespace Test.Shipping.PortTest
         [Test]
         public async Task Get_Port_By_Id_Query()
         {
-            var guid = Guid.NewGuid();
+            var guid = new Guid("7B259406-2E49-413E-AF5D-EF16015C876A");
             var command = new GetPortById(guid.ToString());
             var handler = new GetPortByIdHandler(_mockMapper.Object, _mockPortRepo.Object);
-            try
-            {
-                await handler.Handle(command, default);
-            }
-            catch (Exception ex)
-            {
-                _mockPortRepo.Verify(s => s.List(x => x.Id == guid), Times.Once);
-                if (ex.Message.Contains("existing")) Assert.Pass();
-                Assert.Fail();
-            }
+            await handler.Handle(command, default);
+            _mockPortRepo.Verify(s => s.List(x => x.Id == guid), Times.Once);
+            Assert.Pass();
         }
 
         [Test]
         public async Task Get_Closet_Port_Query()
         {
-            var guid = Guid.NewGuid();
+            var guid = new Guid("D7A50733-D4CE-4564-A4FD-4355D6479268");
             var command = new GetClosetPortQuery(guid.ToString());
             var handler = new GetClosetPortQueryHandler(_mockShipRepo.Object, _mockMapper.Object, _mockPortRepo.Object);
-            try
-            {
-                await handler.Handle(command, default);
-            }
-            catch (Exception ex)
-            {
-                _mockShipRepo.Verify(s => s.List(x => x.Id == guid), Times.Once);
-                Assert.Pass();
-            }
+            await handler.Handle(command, default);
+            _mockShipRepo.Verify(s => s.List(x => x.Id == guid), Times.Once);
+            Assert.Pass();
         }
     }
 }

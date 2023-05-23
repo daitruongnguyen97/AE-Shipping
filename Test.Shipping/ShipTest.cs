@@ -27,6 +27,20 @@ namespace Test.Shipping.ShipTest
         [SetUp]
         public void Setup()
         {
+            var guid = new Guid("D7A50733-D4CE-4564-A4FD-4355D6479268");
+            var mockShip = new List<Ship>()
+            {
+                new Ship
+                {
+                    CreatedDate = DateTime.UtcNow,
+                    Geolocation = new Point(68.2, 88) { SRID = 4326 },
+                    Name = "Ship 1",
+                    Id = guid,
+                    Velocity = 30
+                }
+            };
+            _mockShipRepo.Setup(s => s.List(null)).Returns(mockShip.AsQueryable());
+            _mockShipRepo.Setup(s => s.List(x => x.Id == guid)).Returns(mockShip.AsQueryable());
         }
         [Test]
         public async Task Create_Ship_Command()
@@ -61,19 +75,12 @@ namespace Test.Shipping.ShipTest
         [Test]
         public async Task Get_Ship_By_Id_Query()
         {
-            var guid = Guid.NewGuid();
+            var guid = new Guid("D7A50733-D4CE-4564-A4FD-4355D6479268");
             var command = new GetShipByIdQuery(guid.ToString());
             var handler = new GetShipByIdQueryHandler(_mockShipRepo.Object, _mockMapper.Object);
-            try
-            {
-                await handler.Handle(command, default);
-            }
-            catch (Exception ex)
-            {
-                _mockShipRepo.Verify(s => s.List(x => x.Id == guid), Times.Once);
-                if (ex.Message.Contains("existing")) Assert.Pass();
-                Assert.Fail();
-            }
+            await handler.Handle(command, default);
+            _mockShipRepo.Verify(s => s.List(x => x.Id == guid), Times.Once);
+            Assert.Pass();
         }
 
         [Test]
